@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Spider Clock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Spider Clock</h1>
+
+  <main class="stage">
+    <svg id="clock" viewBox="-500 -500 1000 1000" preserveAspectRatio="xMidYMid meet"
+         role="img" aria-label="Analog clock where a spider's legs are the hands">
+      <defs>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#2a1000" flood-opacity="0.55"/>
+          <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#fff2df" flood-opacity="0.35"/>
+        </filter>
+      </defs>
+
+      <!-- Filled in by script.js -->
+      <g id="webs"></g>
+      <g id="face"></g>
+
+      <!-- Thread the spider hangs from -->
+      <line x1="0" y1="-3000" x2="0" y2="-20" stroke="#fff4e6" stroke-width="2.5" opacity="0.9"/>
+
+      <!-- Legs (decorative + the three that tell time) -->
+      <g id="decor"></g>
+      <g id="hourLeg"></g>
+      <g id="minLeg"></g>
+      <g id="secLeg"></g>
+
+      <!-- Spider body, drawn last so every leg looks attached to it -->
+      <g id="body" filter="url(#glow)">
+        <ellipse cx="0" cy="24" rx="19" ry="28" fill="#fff8ee"/>
+        <ellipse cx="0" cy="-8" rx="13" ry="16" fill="#ffffff"/>
+        <ellipse cx="0" cy="24" rx="7" ry="16" fill="#ecd9c0" opacity="0.6"/>
+        <circle cx="-4" cy="-18" r="2" fill="#5a2c05"/>
+        <circle cx="4" cy="-18" r="2" fill="#5a2c05"/>
+        <circle cx="0" cy="-1" r="4" fill="#5a2c05" opacity="0.35"/>
+      </g>
+    </svg>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
